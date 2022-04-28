@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container fw-bold">
+    <h2 class="text-center">Round 2</h2>
+    <h5 class="text-center text-uppercase fw-bold">Most Runs</h5>
+    <div class="col-lg-4 mx-auto mb-5">
+        <table class="table table-sm table-striped">
+            <thead class="bg-dark text-light text-center">
+                <tr>
+                    <th scope="col">PLAYER</th>
+                    <th scope="col">TEAM</th>
+                    <th scope="col">RUNS</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                {% for object in runs %}
+                <tr>
+                    <td>{{object.player}}</td>
+                    <td>{{object.team}}</td>
+                    <td>{{object.runs}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <h5 class="text-center text-uppercase fw-bold">Most Wickets</h5>
+    <div class="col-lg-4 mx-auto">
+        <table class="table table-sm table-striped text-center">
+            <thead class="bg-dark text-light">
+                <tr>
+                    <th scope="col">PLAYER</th>
+                    <th scope="col">TEAM</th>
+                    <th scope="col">WKTS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for object in wickets %}
+                <tr>
+                    <td>{{object.player}}</td>
+                    <td>{{object.team}}</td>
+                    <td>{{object.wickets}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="d-flex justify-content-center">
+        <img class="border border-dark border-2" style="height: 3rem;"
+            src="{{ MEDIA_URL }}/sponsors/Olliver_gobat_sports_fund.jpg"
+            alt="">
+        <img class="mx-3 border border-dark border-2"
+            style="height: 3rem;"
+            src="{{ MEDIA_URL }}/sponsors/totalautoinc.jpg"
+            alt="">
+    </div>
+</div>
+<a href="{% url 'write-up-list' %}">Write ups</a>
+{% endblock content %}

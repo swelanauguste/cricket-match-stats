@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load markdown %}
+
+{% block content %}
+<a href="{% url 'write-up-list' %}">back</a>
+<div class="container">
+    <div class="card border-success border-3 mx-auto mb-2"
+        style="width: 32rem;">
+      <div class="card-header bg-success rounded-0 text-light pt-3 border-success border-3">
+        <h5 class="card-title text-center fw-bold">{{object.title}}</h5>
+      </div>
+        <div class="card-body">
+            <p class="text-center">{{object.content | markdown | safe }}</p>
+            <div class="d-flex justify-content-center">
+
+                <img class="border border-success border-3 shadow" style="width: 20rem;"
+                    src="{{object.team1.url}}"
+                    alt=""
+                    srcset="">
+                <img class="mx-3 border border-success border-3 shadow" style="width: 20rem;"
+                    src="{{object.team2.url}}"
+                    alt=""
+                    srcset="">
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center">
+        <img class="border border-dark border-2" style="height: 3rem;"
+            src="{{ MEDIA_URL }}/sponsors/Olliver_gobat_sports_fund.jpg"
+            alt="">
+        <img class="mx-3 border border-dark border-2"
+            style="height: 3rem;"
+            src="{{ MEDIA_URL }}/sponsors/totalautoinc.jpg"
+            alt="">
+    </div>
+</div>
+
+{% endblock %}
