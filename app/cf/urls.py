@@ -24,4 +24,6 @@ urlpatterns = [
     path('', views.MostRunsWicketsListView.as_view(), name='runs-wickets'),
     path('writeups/', views.WriteUpListView.as_view(), name='write-up-list'),
     path('writeups/<int:pk>/', views.WriteUpDetailView.as_view(), name='write-up-detail'),
+    path('top-bat/', views.TopPerformersBatsmanListView.as_view(), name='top-performer-bat-list'),
+    path('top-bowl/', views.TopPerformersBowlerListView.as_view(), name='top-performer-bowl-list'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

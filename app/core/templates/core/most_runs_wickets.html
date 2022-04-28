@@ -2,9 +2,11 @@
 
 {% block content %}
 <div class="container fw-bold">
-    <h2 class="text-center">Round 2</h2>
-    <h5 class="text-center text-uppercase fw-bold">Most Runs</h5>
-    <div class="col-lg-4 mx-auto mb-5">
+    <div class="col-lg-4 mx-auto">
+        <p class="text-center text-uppercase">Top Performers</p>
+        <p class="text-center text-uppercase">Round 2</p>
+        <br>
+        <p class="text-center text-uppercase fw-bold">Most Runs</p>
         <table class="table table-sm table-striped">
             <thead class="bg-dark text-light text-center">
                 <tr>
@@ -23,9 +25,8 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-    <h5 class="text-center text-uppercase fw-bold">Most Wickets</h5>
-    <div class="col-lg-4 mx-auto">
+        <br>
+        <p class="text-center text-uppercase fw-bold">Most Wickets</p>
         <table class="table table-sm table-striped text-center">
             <thead class="bg-dark text-light">
                 <tr>
@@ -44,16 +45,27 @@
                 {% endfor %}
             </tbody>
         </table>
-    </div>
-    <div class="d-flex justify-content-center">
-        <img class="border border-dark border-2" style="height: 3rem;"
-            src="{{ MEDIA_URL }}/sponsors/Olliver_gobat_sports_fund.jpg"
-            alt="">
-        <img class="mx-3 border border-dark border-2"
-            style="height: 3rem;"
-            src="{{ MEDIA_URL }}/sponsors/totalautoinc.jpg"
-            alt="">
+        <div class="d-flex justify-content-center">
+            <img class="border border-dark border-2"
+                style="height: 3rem;"
+                src="{{ MEDIA_URL }}/sponsors/Olliver_gobat_sports_fund.jpg"
+                alt="">
+            <img class="mx-3 border border-dark border-2"
+                style="height: 3rem;"
+                src="{{ MEDIA_URL }}/sponsors/totalautoinc.jpg"
+                alt="">
+        </div>
     </div>
 </div>
-<a href="{% url 'write-up-list' %}">Write ups</a>
+<ul>
+    <li>
+        <a href="{% url 'write-up-list' %}">Write ups</a>
+    </li>
+    <li>
+        <a href="{% url 'top-performer-bat-list' %}">Top bat ups</a>
+    </li>
+    <li>
+        <a href="{% url 'top-performer-bowl-list' %}">Top bowl</a>
+    </li>
+</ul>
 {% endblock content %}
