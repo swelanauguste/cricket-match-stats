@@ -13,17 +13,35 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path
+from core import views
 from django.conf import settings
 from django.conf.urls.static import static
-from core import views
+from django.contrib import admin
+from django.urls import path
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.MostRunsWicketsListView.as_view(), name='runs-wickets'),
-    path('writeups/', views.WriteUpListView.as_view(), name='write-up-list'),
-    path('writeups/<int:pk>/', views.WriteUpDetailView.as_view(), name='write-up-detail'),
-    path('top-bat/', views.TopPerformersBatsmanListView.as_view(), name='top-performer-bat-list'),
-    path('top-bowl/', views.TopPerformersBowlerListView.as_view(), name='top-performer-bowl-list'),
+    path("admin/", admin.site.urls),
+    path("", views.MostRunsWicketsListView.as_view(), name="runs-wickets"),
+    path("writeups/", views.WriteUpListView.as_view(), name="write-up-list"),
+    path(
+        "writeups/<int:pk>/", views.WriteUpDetailView.as_view(), name="write-up-detail"
+    ),
+    path(
+        "top-bat/",
+        views.TopPerformersBatsmanListView.as_view(),
+        name="top-performer-bat-list",
+    ),
+    path(
+        "top-bowl/",
+        views.TopPerformersBowlerListView.as_view(),
+        name="top-performer-bowl-list",
+    ),
+    path(
+        "semi-top-bat/", views.SemiBatStatsListView.as_view(), name="semi-top-bat-list"
+    ),
+    path(
+        "semi-top-bowl/",
+        views.SemiBowlStatsListView.as_view(),
+        name="semi-top-bowl-list",
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

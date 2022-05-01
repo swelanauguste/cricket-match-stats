@@ -4,11 +4,21 @@ from django.views.generic import DetailView, ListView, TemplateView
 from .models import (
     MostRuns,
     MostWickets,
+    SemiBatStats,
+    SemiBowlStats,
     Sponsor,
     TopPerformersBatsman,
     TopPerformersBowler,
     WriteUp,
 )
+
+
+class SemiBatStatsListView(ListView):
+    model = SemiBatStats
+
+
+class SemiBowlStatsListView(ListView):
+    model = SemiBowlStats
 
 
 class TopPerformersBatsmanListView(ListView):

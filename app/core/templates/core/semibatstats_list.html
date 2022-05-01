@@ -3,29 +3,26 @@
 {% block content %}
 <a href="/">back</a>
 <div class="container fw-bold">
-    <div class="col-lg-5 mx-auto">
-        <p class="text-center text-uppercase">Top Performers</p>
-        <p class="text-center text-uppercase fw-bold">Bowling</p>
-        <table class="table table-sm table-striped text-center">
-            <thead class="bg-dark text-light">
+    <div class="col-lg-4 mx-auto">
+        <p class="text-center text-uppercase">Top Performers at Semis</p>
+        <br>
+        <p class="text-center text-uppercase fw-bold">Batting </p>
+        <table class="table table-sm table-striped">
+            <thead class="bg-dark text-light text-center">
                 <tr>
                     <th scope="col">PLAYER</th>
                     <th scope="col">MATCHES</th>
-                    <th scope="col">MAIDENS</th>
-                    <th scope="col">OVERS</th>
+                    <th scope="col">INNS</th>
                     <th scope="col">RUNS</th>
-                    <th scope="col">WKTS</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody class="text-center">
                 {% for object in object_list %}
                 <tr>
                     <td>{{object.player}}</td>
                     <td>{{object.matches}}</td>
-                    <td>{{object.maidens}}</td>
-                    <td>{{object.overs}}</td>
+                    <td>{{object.innings}}</td>
                     <td>{{object.runs}}</td>
-                    <td>{{object.wickets}}</td>
                 </tr>
                 {% endfor %}
             </tbody>
