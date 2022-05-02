@@ -4,6 +4,7 @@ from django.views.generic import DetailView, ListView, TemplateView
 from .models import (
     MostRuns,
     MostWickets,
+    PresentationCeremony,
     SemiBatStats,
     SemiBowlStats,
     Sponsor,
@@ -11,6 +12,14 @@ from .models import (
     TopPerformersBowler,
     WriteUp,
 )
+
+
+class PresentationCeremonyListView(ListView):
+    model = PresentationCeremony
+
+
+class PresentationCeremonyDetailView(DetailView):
+    model = PresentationCeremony
 
 
 class SemiBatStatsListView(ListView):

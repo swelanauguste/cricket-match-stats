@@ -44,4 +44,14 @@ urlpatterns = [
         views.SemiBowlStatsListView.as_view(),
         name="semi-top-bowl-list",
     ),
+    path(
+        "presentation-ceremony/",
+        views.PresentationCeremonyListView.as_view(),
+        name="presentation-ceremony-list",
+    ),
+    path(
+        "presentation-ceremony/<int:pk>/",
+        views.PresentationCeremonyDetailView.as_view(),
+        name="presentation-ceremony-detail",
+    ),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

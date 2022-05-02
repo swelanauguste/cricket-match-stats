@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<a href="/">back</a>
+<div class="container fw-bold">
+    <div class="col-lg-4 mx-auto">
+        <p class="text-center text-uppercase">Top Performers</p>
+        <br>
+        <p class="text-center text-uppercase fw-bold">Batting </p>
+        <table class="table table-sm table-striped">
+            <tbody class="text-center">
+                {% for object in object_list %}
+              <a href="{% url 'presentation-ceremony-detail' object.pk %}">presentation-ceremony-detail</a>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+      
+        <div class="d-flex justify-content-center">
+            <img class="border border-dark border-2"
+                style="height: 3rem;"
+                src="{{ MEDIA_URL }}/sponsors/Olliver_gobat_sports_fund.jpg"
+                alt="">
+            <img class="mx-3 border border-dark border-2"
+                style="height: 3rem;"
+                src="{{ MEDIA_URL }}/sponsors/totalautoinc.jpg"
+                alt="">
+        </div>
+    </div>
+</div>
+{% endblock content %}

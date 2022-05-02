@@ -41,6 +41,9 @@ class WriteUp(models.Model):
     content = models.TextField()
     team1 = models.ImageField(upload_to="writeups_team1")
     team2 = models.ImageField(upload_to="writeups_team2")
+    
+    class Meta:
+        ordering = ["-id"]
 
     def __str__(self):
         return self.title
@@ -123,3 +126,19 @@ class SemiBowlStats(models.Model):
 
     def __str__(self):
         return f"{self.player} - {self.wickets}"
+
+
+class PresentationCeremony(models.Model):
+    winners = models.CharField(max_length=100)
+    second = models.CharField(max_length=100)
+    most_runs = models.CharField(max_length=100)
+    most_wickets = models.CharField(max_length=100)
+    most_catches = models.CharField(max_length=100)
+    details = models.TextField()
+    team1 = models.ImageField(upload_to="presentation_team3", null=True, blank=True)
+    team2 = models.ImageField(upload_to="presentation_team3", null=True, blank=True)
+    team3 = models.ImageField(upload_to="presentation_team3", null=True, blank=True)
+
+    def __str__(self):
+        return self.winners
+    
